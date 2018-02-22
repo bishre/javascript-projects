@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Simple JS Counter</title>
+	<meta charset = "utf-8">
+</head>
+<body style="text-align: center; margin: 200px;">
+    <button id="countUp" type="button" style="background-color: green" onclick="countUp()">Count up</button>
+		<button id="reset" type="button" name="button" style="background-color: red" onclick="reset()">Reset</button>
+	<div id = "counter" style="font-size: 100px" onmousedown="changeOpacity()" onmouseup="resetOpacity()">0</div>
+
+	<style>
+	body{
+		background-color: #abcdef;
+	}
+		button{
+			color: white;
+			width: 100px;
+			height: 50px;
+			border-radius: 10px;
+			font-family: helvetica;
+			font-size: 15px;
+		}
+	</style>
+	<script type="text/javascript">
+		var count = 0;
+	/* this function increase the value of div element with id counter by 1*/
+		function countUp(){
+			count += 1; /* Increases count by 1 */
+			document.getElementById('counter').innerHTML = count ;
+			console.log("now the counter should go up by 1");
+			document.getElementById('counter').style.color = "green";
+		}
+		/* this function resets the value to 0*/
+		function reset(){
+			document.getElementById('counter').innerHTML = 0;
+			count = 0;
+			console.log("now the counter should be reset");
+			document.getElementById('counter').style.color = "red";
+		}
+
+		/*on pressing the mouse button, the opacity of the counter element decreases*/
+		function changeOpacity(){
+			document.getElementById('counter').style.opacity = 0.5;
+		}
+		/*on releasing the mouse button, the opacity of the counter element is restored*/
+		function resetOpacity(){
+			document.getElementById('counter').style.opacity = 1;
+		}
+
+	</script>
+</body>
+</html>
